@@ -1,0 +1,54 @@
+﻿<Window x:Class="QueueSystem.View.StyledMessageBox"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        WindowStyle="None" AllowsTransparency="True"
+        Title="AddingDialog" Height="220"  Width="500" 
+        MaxHeight="220" MaxWidth="500" BorderThickness="0" WindowStartupLocation="CenterScreen"
+        MinHeight="220" MinWidth="500" Background="Transparent">
+    <Border CornerRadius="8" BorderThickness="4" BorderBrush="#272727">
+        <Grid Background="#272727">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="0.35*"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Orientation="Vertical"  Grid.Row="0" Background="#272727">
+                <Label x:Name="HeaderText"  Margin="0,10,0,10" Foreground="White" FontSize="22" FontWeight="Bold" HorizontalAlignment="Center"/>
+
+
+                <TextBlock x:Name="MainContent" TextWrapping="Wrap" TextAlignment="Center" Foreground="White" VerticalAlignment="Center" FontSize="16" Margin="50,25,50,0" />
+
+            </StackPanel>
+
+
+            <DockPanel VerticalAlignment="Stretch" Grid.Row="1" Background="#272727">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Button Style="{StaticResource PopupButton}" x:Name="SubmitButton" Grid.Column="0" Opacity="0" IsEnabled="False" BorderThickness="0" FontSize="15" Content="Bəli" Width="150" Height="38"  Foreground="#E5E5E5" Background="Red" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5,0,0,0" Click="SubmitButtonClick">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="6"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+
+                    <Button Style="{StaticResource PopupButton}" x:Name="ExitButton" Grid.Column="1" BorderThickness="0" FontSize="15" Content="Xeyr" Width="150" Height="38"  Foreground="#E5E5E5" Background="#1A1A1A" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5,0,0,0" Click="ExitButtonCLick">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="6"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+
+                </Grid>
+            </DockPanel>
+        </Grid>
+    </Border>
+</Window>

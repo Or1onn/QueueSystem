@@ -1,0 +1,82 @@
+﻿<Window x:Class="QueueSystem.View.AddingDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QueueSystem.View"
+        mc:Ignorable="d"
+        WindowStyle="None" AllowsTransparency="True"
+        Title="AddingDialog" Height="360"  Width="380" 
+        MaxHeight="360" MaxWidth="380" BorderThickness="0" WindowStartupLocation="CenterOwner"
+        MinHeight="360" MinWidth="380" Background="Transparent">
+
+    <Border CornerRadius="8" BorderThickness="4" BorderBrush="#272727">
+        <Grid Background="#272727">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="0.3*"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Orientation="Vertical" Grid.Row="0" Background="#272727">
+                <Label Content="Yeni insanın əlavə edilməsi"   Margin="0,10,0,10" Foreground="White" FontSize="22" FontWeight="Bold" HorizontalAlignment="Center"/>
+
+                <StackPanel Orientation="Vertical">
+                    <Label FontSize="13" Content="FIN" Foreground="White"/>
+                    <Border Margin="10,10,10,0" x:Name="FIN_Border" BorderBrush="Transparent" BorderThickness="0" CornerRadius="8" Padding="0">
+                        <TextBox Style="{StaticResource FinPlaceHolder}" x:Name="FIN" FontSize="15" Height="30" VerticalContentAlignment="Center" TextChanged="InputsCheck">
+                            <TextBox.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="6"/>
+                                </Style>
+                            </TextBox.Resources>
+                        </TextBox>
+                    </Border>
+                </StackPanel>
+
+                <StackPanel  Margin="0,10,0,0" Orientation="Vertical">
+                    <Label FontSize="13" Content="Tam adı" Foreground="White"/>
+                    <TextBox x:Name="FullName" Height="30" Margin="10,10,10,0" VerticalContentAlignment="Center"  FontSize="15" TextChanged="InputsCheck">
+                        <TextBox.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="6"/>
+                            </Style>
+                        </TextBox.Resources>
+                    </TextBox>
+                    <!--ContentChanged="InputsCheck"-->
+                </StackPanel>
+
+                <Label FontSize="13" Margin="0,10,0,0" Content="Ödəniş Statusu" Foreground="White"/>
+                <StackPanel  Orientation="Horizontal" Margin="0,5,0,0">
+
+                    <RadioButton Checked="RadioButtonSelected" x:Name="Paid" Margin="10,0,0,0" FontSize="15" Foreground="White" Content="Ödənilib" />
+                    <RadioButton Checked="RadioButtonSelected" x:Name="NotPaid" Margin="40,0,0,0" FontSize="15" Foreground="White"  Content="Ödənilməyib" />
+                </StackPanel>
+            </StackPanel>
+
+
+            <DockPanel VerticalAlignment="Stretch" Grid.Row="1" Background="#272727">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Button Style="{StaticResource PopupButton}" x:Name="Submit" BorderThickness="0" FontSize="15" Grid.Column="0" IsEnabled="False" Content="Əlavə et" Width="150" Height="38"  Background="#1A1A1A" Foreground="#E5E5E5" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,5,0" Click="Submit_Click">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="6"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Button Style="{StaticResource PopupButton}" Grid.Column="1" BorderThickness="0" FontSize="15" Content="Ləğv et" Width="150" Height="38"  Foreground="#E5E5E5" Background="#1A1A1A" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,0,0" Click="Button_Click">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="6"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                </Grid>
+            </DockPanel>
+        </Grid>
+    </Border>
+</Window>

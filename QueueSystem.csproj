@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net6.0-windows</TargetFramework>
+		<Nullable>enable</Nullable>
+		<UseWPF>true</UseWPF>
+		<ApplicationIcon>Resources\Images\logo.ico</ApplicationIcon>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Remove="Resources\DataBases\QueueDB.db3" />
+		<None Remove="Resources\Images\logo.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Content Include="Resources\Images\logo.ico" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
+	</ItemGroup>
+	<ItemGroup>
+		<Resource Include="Resources\DataBases\QueueDB.db3">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Resources\Images\logo.png" />
+	</ItemGroup>
+	</Project>
