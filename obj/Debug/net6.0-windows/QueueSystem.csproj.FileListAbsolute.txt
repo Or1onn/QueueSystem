@@ -43,4 +43,3 @@ C:\Users\Orion\source\repos\Job\QueueSystem\bin\Debug\net6.0-windows\runtimes\wi
 C:\Users\Orion\source\repos\Job\QueueSystem\obj\Debug\net6.0-windows\QueueSystem.csproj.CopyComplete
 C:\Users\Orion\source\repos\Job\QueueSystem\obj\Debug\net6.0-windows\View\StyledMessageBox.baml
 C:\Users\Orion\source\repos\Job\QueueSystem\obj\Debug\net6.0-windows\View\StyledMessageBox.g.cs
-C:\Users\Orion\source\repos\Job\QueueSystem\obj\Debug\net6.0-windows\QueueSystem_Content.g.cs
